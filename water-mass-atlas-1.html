@@ -11,9 +11,87 @@
 </head>
 
 <body>
-  <main>
+  <nav>
     <h1>Atlas of water masses</h1>
-  </main>
+  </nav>
+
+  <div class="image-container">
+    <!-- Main image with clickable areas -->
+    <img src="figures_atlas/main_map.png" alt="Main Figure" usemap="#imagemap" id="mainImage">
+
+    <!-- Clickable points on the image -->
+    <div id="watermass1" class="click-point" data-tooltip="NATSMW" onclick="selectWaterMass('watermass1')"></div>
+    <div id="watermass2" class="click-point" data-tooltip="SAMW Pac" onclick="selectWaterMass('watermass2')"></div>
+
+  </div>
+
+  <!-- Buttons to select the variable -->
+  <div class="variable-buttons">
+      <button onclick="selectVariable('temp')">Temperature</button>
+      <button onclick="selectVariable('sal')">Salinity</button>
+      <button onclick="selectVariable('oxy')">Oxygen</button>
+  </div>
+
+  <!-- Hidden figures all water masses -->
+  <img src="figures_atlas/10_NASTMW_Temperature.gif" alt="NASTMW T" id="watermass1_temp" class="hidden-figure">
+  <img src="figures_atlas/10_NASTMW_Salinity.gif" alt="NASTMW S" id="watermass1_sal" class="hidden-figure">
+  <img src="figures_atlas/10_NASTMW_Doxy.gif" alt="NASTMW O2" id="watermass1_oxy" class="hidden-figure">
+
+  <img src="figures_atlas/10_SAMWPac_Temp.gif" alt="SAMW Pac T" id="watermass2_temp" class="hidden-figure">
+  <img src="figures_atlas/10_SAMWPac_Salinity.gif" alt="SAMW Pac S" id="watermass2_sal" class="hidden-figure">
+  <img src="figures_atlas/10_SAMWPac_Doxy.gif" alt="SAMW Pac O2" id="watermass2_oxy" class="hidden-figure">
+
+  <style>
+  /* Example clickable points */
+  #watermass1 {
+      top: 200px;
+      left: 1050px;
+  }
+
+  #watermass2 {
+      top: 420px;
+      left: 800px;
+  }
+  </style>
+
+  <script>
+
+    let selectedWaterMass = null;
+    let selectedVariable = null;
+
+    // Function to handle water mass selection
+    function selectWaterMass(waterMassId) {
+        selectedWaterMass = waterMassId;
+
+        // Hide all figures
+        document.querySelectorAll('img.hidden-figure').forEach(function(figure) {
+            figure.style.display = 'none';
+        });
+
+        // Reset the variable selection
+        selectedVariable = null;
+    }
+
+    // Function to handle variable selection and display the corresponding figure
+    function selectVariable(variable) {
+        if (selectedWaterMass === null) {
+            alert('Please select a water mass first!');
+            return;
+        }
+
+        selectedVariable = variable;
+
+        // Hide all figures again
+        document.querySelectorAll('img.hidden-figure').forEach(function(figure) {
+            figure.style.display = 'none';
+        });
+
+        // Show the figure corresponding to the selected water mass and variable
+        const figureId = selectedWaterMass + '_' + selectedVariable;
+        document.getElementById(figureId).style.display = 'block';
+    }
+  </script>
+
 
   <a href="index.html">Back to Home Page</a>
 </body>
