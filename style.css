@@ -4,7 +4,7 @@
 body
 {background-color: white;
 margin: 0;
-padding: 3%;
+padding: 0%;
 overflow-x: hidden;}
 
 #rectangle
@@ -17,9 +17,11 @@ margin: 0;}
 #corps
 {display: flex;
 flex-direction: column;
+flex-wrap: wrap;
 justify-content: space-between;
-max-width: 700px;
-margin: 3% 6% 3% 6%;
+max-width: 1500px;
+margin: 2% 6% 3% 6%;
+padding: 0 2%;
 font-family: helvetica, sans-serif;
 font-size: 1.1em;}
 
@@ -86,16 +88,25 @@ font-weight: 900}
 
 #corps h3
 {margin:0;
-padding: 25px 0 5px 0;
+padding: 5px 0 5px 0;
 font-size: 1.1em;
 font-weight: 900;
 text-transform: uppercase;}
 
 #corps h4
 {margin:0;
+padding: 30px 0 5px 0;
+font-size: 1.5em;
+font-weight: 900}
+
+#corps h5
+{margin:0;
 padding: 5px 0 5px 0;
 font-size: 1em;
 font-weight: 900}
+
+#corps li
+{margin-bottom: 20px}
 
 nav a:link
 {color: inherit;
@@ -106,6 +117,57 @@ nav a:hover
 
 nav a:visited
 {color: inherit;}
+
+/* Styling the header */
+header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000; /* Keep it on top of everything */
+}
+
+/* Styling the navigation menu */
+nav {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+    color: white;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #333;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Main content */
+.content {
+    padding-top: 60px; /* Leave space for the fixed header */
+}
+
+.text{
+  padding:20px
+}
+/* ---- */
 
 img
 {display: block;
@@ -146,8 +208,7 @@ color: #888888;}
 /* Style to make the image responsive and relative for positioning */
 .image-container {
     position: relative;
-    width: 100%;
-    max-width: 1400px;
+    width: 1400px;
 }
 
 /* The image itself */
@@ -156,12 +217,19 @@ color: #888888;}
     height: auto;
 }
 
+/* Style to float the image to the left with some spacing */
+.side-image {
+    float: right; /* Float the image to the left */
+    margin-left: 30px; /* Spacing between the image and text */
+    width: 400px; /* Image width */
+}
+
 /* Style for clickable points (as small circles) */
 .click-point {
     position: absolute;
     width: 15px;
     height: 15px;
-    background-color: blue; /* Red dot */
+    background-color: hotpink; /* Red dot */
     border-radius: 50%;
     cursor: pointer;
 }
