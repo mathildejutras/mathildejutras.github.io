@@ -223,6 +223,10 @@ color: #888888;}
     width: 400px; /* Image width */
 }
 
+.center-image {
+    float: center; /* Float the image to the left */
+}
+
 /* Style for clickable points (as small circles) */
 .click-point {
     position: absolute;
