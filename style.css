@@ -223,6 +223,12 @@ color: #888888;}
     width: 400px; /* Image width */
 }
 
+.side-image-2 {
+    float: right; /* Float the image to the left */
+    margin-left: 50px; /* Spacing between the image and text */
+    width: 600px; /* Image width */
+}
+
 .center-image {
     float: center; /* Float the image to the left */
 }
