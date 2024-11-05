@@ -174,6 +174,12 @@ margin-left: auto;
 margin-right: auto;
 }
 
+video
+{display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
 table
 {padding: 10px 0 0 0;
 }
@@ -231,6 +237,14 @@ color: #888888;}
 
 .center-image {
     float: center; /* Float the image to the left */
+}
+
+.centered {
+    text-align: center;
+}
+.centered video {
+    margin: auto;
+    display: block;
 }
 
 /* Style for clickable points (as small circles) */
