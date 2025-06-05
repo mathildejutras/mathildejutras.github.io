@@ -58,27 +58,18 @@
 
       wmValues.forEach(wm => {
         varValues.forEach(vari => {
-//          // Create a new img element
-//          const video = document.createElement('video');
-//          // Set attributes for each image
-//          video.src = `figures_atlas/${wm}_${vari}.mp4`;
-//          video.alt = `${wm} ${vari}`;
-//          video.id = `${wm}_${vari}`;
-//          video.autoplay = true;
-//          video.loop = true;
-//          video.controls = true;
-//          video.className = 'hidden-figure'; // Add the class 'hidden-figure'
-//          // Append the image to the container
-//          dynamicContainer.appendChild(video);
-            // Create a new img element
-          const img = document.createElement('img');
+          // Create a new img element
+          const video = document.createElement('video');
           // Set attributes for each image
-          img.src = `figures_atlas/${wm}_${vari}.gif`;
-          img.alt = `${wm} ${vari}`;
-          img.id = `${wm}_${vari}`;
-          img.className = 'hidden-figure'; // Add the class 'hidden-figure'
+          video.src = `figures_atlas/${wm}_${vari}.mp4`;
+          video.alt = `${wm} ${vari}`;
+          video.id = `${wm}_${vari}`;
+          video.autoplay = true;
+          video.loop = true;
+          video.controls = true;
+          video.className = 'hidden-figure'; // Add the class 'hidden-figure'
           // Append the image to the container
-          dynamicContainer.appendChild(img);
+          dynamicContainer.appendChild(video);
         })
       })
     </script>
@@ -139,7 +130,7 @@
           selectedWaterMass = waterMassId;
 
           // Hide all figures
-          document.querySelectorAll('img.hidden-figure').forEach(function(figure) {
+          document.querySelectorAll('video.hidden-figure').forEach(function(figure) {
               figure.style.display = 'none';
           });
 
@@ -159,7 +150,7 @@
           selectedVariable = variable;
 
           // Hide all figures again
-          document.querySelectorAll('img.hidden-figure').forEach(function(figure) {
+          document.querySelectorAll('video.hidden-figure').forEach(function(figure) {
               figure.style.display = 'none';
           });
 
